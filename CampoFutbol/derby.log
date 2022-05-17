@@ -1,5 +1,5 @@
 ----------------------------------------------------------------
-Mon May 16 07:41:14 CEST 2022D001 : [0] The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585), [1] a816c00e-0180-cb62-8808-0000065b9158, [2] C:\Users\Usuario\Desktop\IES Los Remedios\Programacion\UD8\CampoFutbol\BDCampoFutbol, [3] jdk.internal.loader.ClassLoaders$AppClassLoader@79698539, [4] file:/C:/Users/Usuario/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
+Tue May 17 12:57:59 CEST 2022D001 : [0] The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585), [1] a816c00e-0180-d1aa-e255-0000065c8f78, [2] C:\Users\Usuario\Desktop\IES Los Remedios\Programacion\UD8\CampoFutbol\BD_CampoFutbol, [3] jdk.internal.loader.ClassLoaders$AppClassLoader@79698539, [4] file:/C:/Users/Usuario/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=Oracle Corporation
 java.runtime.version=11.0.11+9-LTS-194
 user.dir=C:\Users\Usuario\Desktop\IES Los Remedios\Programacion\UD8\CampoFutbol
@@ -8,5 +8,68 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=null
 C005 : [0] 
-----------------------------------------------------------------
-Mon May 16 07:41:17 CEST 2022D002 : [0] a816c00e-0180-cb62-8808-0000065b9158, [1] C:\Users\Usuario\Desktop\IES Los Remedios\Programacion\UD8\CampoFutbol\BDCampoFutbol, [2] jdk.internal.loader.ClassLoaders$AppClassLoader@79698539
+Tue May 17 12:58:03 CEST 2022 Thread[JavaFX Application Thread,5,main] Cleanup action starting
+java.sql.SQLException: XJ004.C : [0] BDCampoFutbol
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:225)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:220)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(EmbedConnection.java:3215)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(EmbedConnection.java:772)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:442)
+	at org.apache.derby.iapi.jdbc.InternalDriver$1.run(InternalDriver.java:660)
+	at org.apache.derby.iapi.jdbc.InternalDriver$1.run(InternalDriver.java:656)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.derby.iapi.jdbc.InternalDriver.getNewEmbedConnection(InternalDriver.java:654)
+	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:300)
+	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:967)
+	at org.apache.derby.iapi.jdbc.AutoloadedDriver.connect(AutoloadedDriver.java:136)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:251)
+	at es.cristiangg.campofutbol/es.cristiangg.campofutbol.App.stop(App.java:52)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$10(LauncherImpl.java:865)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:455)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:428)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:427)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: ERROR XJ004: XJ004.C : [0] BDCampoFutbol
+	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:300)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(SQLExceptionFactory.java:170)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:75)
+	... 25 more
+============= begin nested exception, level (1) ===========
+ERROR XJ004: XJ004.C : [0] BDCampoFutbol
+	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:300)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(SQLExceptionFactory.java:170)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:75)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:225)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:220)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(EmbedConnection.java:3215)
+	at org.apache.derby.impl.jdbc.EmbedConnection.handleDBNotFound(EmbedConnection.java:772)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:442)
+	at org.apache.derby.iapi.jdbc.InternalDriver$1.run(InternalDriver.java:660)
+	at org.apache.derby.iapi.jdbc.InternalDriver$1.run(InternalDriver.java:656)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.derby.iapi.jdbc.InternalDriver.getNewEmbedConnection(InternalDriver.java:654)
+	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:300)
+	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:967)
+	at org.apache.derby.iapi.jdbc.AutoloadedDriver.connect(AutoloadedDriver.java:136)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:251)
+	at es.cristiangg.campofutbol/es.cristiangg.campofutbol.App.stop(App.java:52)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$10(LauncherImpl.java:865)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:455)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:428)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:427)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+============= end nested exception, level (1) ===========
+Cleanup action completed

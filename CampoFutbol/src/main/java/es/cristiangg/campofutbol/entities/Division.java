@@ -23,13 +23,13 @@ import javax.persistence.Table;
  *
  * @author Usuario
  */
-@Entity
-@Table(name = "DIVISION")
-@NamedQueries({
-    @NamedQuery(name = "Division.findAll", query = "SELECT d FROM Division d"),
-    @NamedQuery(name = "Division.findById", query = "SELECT d FROM Division d WHERE d.id = :id"),
-    @NamedQuery(name = "Division.findByCodigo", query = "SELECT d FROM Division d WHERE d.codigo = :codigo"),
-    @NamedQuery(name = "Division.findByNombre", query = "SELECT d FROM Division d WHERE d.nombre = :nombre")})
+@javax.persistence.Entity
+@javax.persistence.Table(name = "DIVISION")
+@javax.persistence.NamedQueries({
+    @javax.persistence.NamedQuery(name = "Division.findAll", query = "SELECT d FROM Division d"),
+    @javax.persistence.NamedQuery(name = "Division.findById", query = "SELECT d FROM Division d WHERE d.id = :id"),
+    @javax.persistence.NamedQuery(name = "Division.findByCodigo", query = "SELECT d FROM Division d WHERE d.codigo = :codigo"),
+    @javax.persistence.NamedQuery(name = "Division.findByNombre", query = "SELECT d FROM Division d WHERE d.nombre = :nombre")})
 public class Division implements Serializable {
 
     private static final long serialVersionUID = 1L;

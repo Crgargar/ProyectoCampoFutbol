@@ -27,22 +27,22 @@ import javax.persistence.TemporalType;
  *
  * @author Usuario
  */
-@Entity
-@Table(name = "ESTADIO")
-@NamedQueries({
-    @NamedQuery(name = "Estadio.findAll", query = "SELECT e FROM Estadio e"),
-    @NamedQuery(name = "Estadio.findById", query = "SELECT e FROM Estadio e WHERE e.id = :id"),
-    @NamedQuery(name = "Estadio.findByNombre", query = "SELECT e FROM Estadio e WHERE e.nombre = :nombre"),
-    @NamedQuery(name = "Estadio.findByLocalizacion", query = "SELECT e FROM Estadio e WHERE e.localizacion = :localizacion"),
-    @NamedQuery(name = "Estadio.findByTelefono", query = "SELECT e FROM Estadio e WHERE e.telefono = :telefono"),
-    @NamedQuery(name = "Estadio.findByEmail", query = "SELECT e FROM Estadio e WHERE e.email = :email"),
-    @NamedQuery(name = "Estadio.findByProvincia", query = "SELECT e FROM Estadio e WHERE e.provincia = :provincia"),
-    @NamedQuery(name = "Estadio.findByFechaFundacion", query = "SELECT e FROM Estadio e WHERE e.fechaFundacion = :fechaFundacion"),
-    @NamedQuery(name = "Estadio.findByCategoriaClubs", query = "SELECT e FROM Estadio e WHERE e.categoriaClubs = :categoriaClubs"),
-    @NamedQuery(name = "Estadio.findByPrecio", query = "SELECT e FROM Estadio e WHERE e.precio = :precio"),
-    @NamedQuery(name = "Estadio.findByMedidaCampo", query = "SELECT e FROM Estadio e WHERE e.medidaCampo = :medidaCampo"),
-    @NamedQuery(name = "Estadio.findByEntradasDisponibles", query = "SELECT e FROM Estadio e WHERE e.entradasDisponibles = :entradasDisponibles"),
-    @NamedQuery(name = "Estadio.findByFotoEstadio", query = "SELECT e FROM Estadio e WHERE e.fotoEstadio = :fotoEstadio")})
+@javax.persistence.Entity
+@javax.persistence.Table(name = "ESTADIO")
+@javax.persistence.NamedQueries({
+    @javax.persistence.NamedQuery(name = "Estadio.findAll", query = "SELECT e FROM Estadio e"),
+    @javax.persistence.NamedQuery(name = "Estadio.findById", query = "SELECT e FROM Estadio e WHERE e.id = :id"),
+    @javax.persistence.NamedQuery(name = "Estadio.findByNombre", query = "SELECT e FROM Estadio e WHERE e.nombre = :nombre"),
+    @javax.persistence.NamedQuery(name = "Estadio.findByLocalizacion", query = "SELECT e FROM Estadio e WHERE e.localizacion = :localizacion"),
+    @javax.persistence.NamedQuery(name = "Estadio.findByTelefono", query = "SELECT e FROM Estadio e WHERE e.telefono = :telefono"),
+    @javax.persistence.NamedQuery(name = "Estadio.findByEmail", query = "SELECT e FROM Estadio e WHERE e.email = :email"),
+    @javax.persistence.NamedQuery(name = "Estadio.findByProvincia", query = "SELECT e FROM Estadio e WHERE e.provincia = :provincia"),
+    @javax.persistence.NamedQuery(name = "Estadio.findByFechaFundacion", query = "SELECT e FROM Estadio e WHERE e.fechaFundacion = :fechaFundacion"),
+    @javax.persistence.NamedQuery(name = "Estadio.findByCategoriaClubs", query = "SELECT e FROM Estadio e WHERE e.categoriaClubs = :categoriaClubs"),
+    @javax.persistence.NamedQuery(name = "Estadio.findByPrecio", query = "SELECT e FROM Estadio e WHERE e.precio = :precio"),
+    @javax.persistence.NamedQuery(name = "Estadio.findByMedidaCampo", query = "SELECT e FROM Estadio e WHERE e.medidaCampo = :medidaCampo"),
+    @javax.persistence.NamedQuery(name = "Estadio.findByEntradasDisponibles", query = "SELECT e FROM Estadio e WHERE e.entradasDisponibles = :entradasDisponibles"),
+    @javax.persistence.NamedQuery(name = "Estadio.findByFotoEstadio", query = "SELECT e FROM Estadio e WHERE e.fotoEstadio = :fotoEstadio")})
 public class Estadio implements Serializable {
 
     private static final long serialVersionUID = 1L;
