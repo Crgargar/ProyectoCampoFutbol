@@ -26,12 +26,12 @@
                   <Insets right="30.0" top="10.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Suprimir">
+            <Button mnemonicParsing="false" onAction="#onActionButtonSuprimir" text="Suprimir">
                <HBox.margin>
                   <Insets right="30.0" top="10.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Guardar">
+            <Button mnemonicParsing="false" onAction="#onActionButtonGuardar" text="Guardar">
                <HBox.margin>
                   <Insets top="10.0" />
                </HBox.margin>

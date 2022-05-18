@@ -1,5 +1,5 @@
 ----------------------------------------------------------------
-Tue May 17 12:57:59 CEST 2022D001 : [0] The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585), [1] a816c00e-0180-d1aa-e255-0000065c8f78, [2] C:\Users\Usuario\Desktop\IES Los Remedios\Programacion\UD8\CampoFutbol\BD_CampoFutbol, [3] jdk.internal.loader.ClassLoaders$AppClassLoader@79698539, [4] file:/C:/Users/Usuario/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
+Wed May 18 07:38:15 CEST 2022D001 : [0] The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585), [1] a816c00e-0180-d5ac-8575-0000065fa538, [2] C:\Users\Usuario\Desktop\IES Los Remedios\Programacion\UD8\CampoFutbol\BD_CampoFutbol, [3] jdk.internal.loader.ClassLoaders$AppClassLoader@79698539, [4] file:/C:/Users/Usuario/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=Oracle Corporation
 java.runtime.version=11.0.11+9-LTS-194
 user.dir=C:\Users\Usuario\Desktop\IES Los Remedios\Programacion\UD8\CampoFutbol
@@ -8,7 +8,7 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=null
 C005 : [0] 
-Tue May 17 12:58:03 CEST 2022 Thread[JavaFX Application Thread,5,main] Cleanup action starting
+Wed May 18 07:40:51 CEST 2022 Thread[JavaFX Application Thread,5,main] Cleanup action starting
 java.sql.SQLException: XJ004.C : [0] BDCampoFutbol
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)

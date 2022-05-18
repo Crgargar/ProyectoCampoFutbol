@@ -4,16 +4,20 @@ import es.cristiangg.campofutbol.entities.Estadio;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
 import javax.persistence.Query;
 
 public class PrimaryController implements Initializable{
@@ -32,7 +36,7 @@ public class PrimaryController implements Initializable{
     @FXML
     private TextField textFieldLocalizacion;
     @FXML
-    private AnchorPane rootEstadioView;
+    private TextField textFieldDivision;
    
     @Override
     public void initialize(URL url, ResourceBundle rb){
@@ -62,15 +66,68 @@ public class PrimaryController implements Initializable{
                 });
             cargarTodosEstadio();
 
-        }       
+        }      
         private void cargarTodosEstadio(){
             Query queryEstadioFindAll = App.em.createNamedQuery("Estadio.findAll");
             List<Estadio> listEstadio = queryEstadioFindAll.getResultList();
 //            System.out.print("a" + listEstadio.size());
             tableViewEstadio.setItems(FXCollections.observableArrayList(listEstadio));
         }
+       
+        @FXML
+        private void onActionButtonGuardar(ActionEvent event){
+            if (estadioSeleccionada != null){
+                estadioSeleccionada.setNombre(textFieldNombre.getText());
+                estadioSeleccionada.setLocalizacion(textFieldLocalizacion.getText());
+//                estadioSeleccionada.setLocalizacion(String.valueOf(textFieldDivision.getText());
+                App.em.getTransaction().begin();
+                App.em.merge(estadioSeleccionada);
+                App.em.getTransaction().commit();
+               
+                int numFilaSeleccionada = tableViewEstadio.getSelectionModel().getSelectedIndex();
+                tableViewEstadio.getItems().set(numFilaSeleccionada, estadioSeleccionada);
+                TablePosition pos = new TablePosition(tableViewEstadio, numFilaSeleccionada, null);
+                tableViewEstadio.getFocusModel().focus(pos);
+                tableViewEstadio.requestFocus();
+            }
+           
+        }
+        
+        @FXML
+        private void onActionButtonSuprimir(ActionEvent event){
+            if(estadioSeleccionada != null){
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Confirmar");
+                alert.setHeaderText("¿Desea suprimir el siguiente registro?");
+                alert.setContentText(estadioSeleccionada.getNombre() + " "
+                    + estadioSeleccionada.getLocalizacion());
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.get() == ButtonType.OK){
+                    App.em.getTransaction().begin();
+                    App.em.remove(estadioSeleccionada);
+                    App.em.getTransaction().commit();
+                    tableViewEstadio.getItems().remove(estadioSeleccionada);
+                    tableViewEstadio.getFocusModel().focus(null);
+                    tableViewEstadio.requestFocus();
+                } else {
+                    int numFilaSeleccionada = tableViewEstadio.getSelectionModel().getSelectedIndex();
+                    tableViewEstadio.getItems().set(numFilaSeleccionada, estadioSeleccionada);
+                    TablePosition pos = new TablePosition(tableViewEstadio, numFilaSeleccionada, null);
+                    tableViewEstadio.getFocusModel().focus(pos);
+                    tableViewEstadio.requestFocus();
+                }
+            } else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Atencion");
+                alert.setHeaderText("Debe seleccionar un registro");
+                alert.showAndWait();
+            }            
+        }
+        
+        
    
     private void switchToSecondary() throws IOException {
         App.setRoot("secondary");
     }
+
 }
