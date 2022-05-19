@@ -24,6 +24,7 @@ public class App extends Application {
 
     private static Scene scene;
     public static EntityManager em;
+    public static FXMLLoader fxmlLoader;
 
     @Override
     public void start(Stage stage) throws IOException {

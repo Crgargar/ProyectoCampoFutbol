@@ -6,6 +6,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -122,6 +124,36 @@ public class PrimaryController implements Initializable{
                 alert.setHeaderText("Debe seleccionar un registro");
                 alert.showAndWait();
             }            
+        }
+        
+        @FXML
+        private void onActionButtonNuevo(ActionEvent event){
+            try{
+                App.setRoot("secondary");
+                SecondaryController secondaryController = (SecondaryController)App.fxmlLoader.getController();
+                estadioSeleccionada = new Estadio();
+                secondaryController.setEstadio(estadioSeleccionada, true);
+            } catch (IOException ex){
+                Logger.getLogger(PrimaryController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+            }
+        }
+        
+        @FXML
+        private void onActionButtonEditar(ActionEvent event){
+            if(estadioSeleccionada != null){
+                try{
+                    App.setRoot("secondary");
+                    SecondaryController secondaryController = (SecondaryController)App.fxmlLoader.getController();
+                    secondaryController.setEstadio(estadioSeleccionada, false);
+                }catch (IOException ex){
+                    Logger.getLogger(PrimaryController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+                }
+            }else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Atencion");
+                alert.setHeaderText("Debe seleccionar un registro");
+                alert.showAndWait();
+            }
         }
         
         
