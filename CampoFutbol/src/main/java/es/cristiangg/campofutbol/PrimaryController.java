@@ -85,7 +85,7 @@ public class PrimaryController implements Initializable{
                 App.em.getTransaction().begin();
                 App.em.merge(estadioSeleccionada);
                 App.em.getTransaction().commit();
-               
+                
                 int numFilaSeleccionada = tableViewEstadio.getSelectionModel().getSelectedIndex();
                 tableViewEstadio.getItems().set(numFilaSeleccionada, estadioSeleccionada);
                 TablePosition pos = new TablePosition(tableViewEstadio, numFilaSeleccionada, null);

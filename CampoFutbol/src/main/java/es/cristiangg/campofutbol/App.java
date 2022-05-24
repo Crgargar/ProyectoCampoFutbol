@@ -12,6 +12,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.Alert;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -27,25 +28,32 @@ public class App extends Application {
     public static FXMLLoader fxmlLoader;
 
     @Override
-    public void start(Stage stage) throws IOException {
+      public void start(Stage stage) throws IOException {
+        // Conexion con la base de datos
         // Conexion con la base de datos
         try {
             EntityManagerFactory emf = Persistence.createEntityManagerFactory("CampoFubtolPU");
             em = emf.createEntityManager();
         } catch(PersistenceException ex){
             Logger.getLogger(App.class.getName()).log(Level.WARNING, ex.getMessage(), ex);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Atencion");
+            alert.setHeaderText("no se ha podido abrir la base de datos\n"
+                + "compruebe que no se encuentra ya abierta la aplicacion");
+            alert.showAndWait();
         }
-        
+       
         scene = new Scene(loadFXML("primary"), 640, 480);
         stage.setScene(scene);
+        stage.setTitle("Estadios de futbol");
         stage.show();
-        
+       
         Estadio e = new Estadio(0, "pepe", "ramo");
         em.getTransaction().begin();
         em.persist(e);
         em.getTransaction().commit();
     }
-    
+      
     @Override
     public void stop() throws Exception {
         em.close();
@@ -60,7 +68,7 @@ public class App extends Application {
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
 
