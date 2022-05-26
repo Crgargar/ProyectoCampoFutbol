@@ -47,10 +47,10 @@ public class App extends Application {
         stage.setTitle("Estadios de futbol");
         stage.show();
        
-        Estadio e = new Estadio(0, "pepe", "ramo");
-        em.getTransaction().begin();
-        em.persist(e);
-        em.getTransaction().commit();
+//        Estadio e = new Estadio(0, "pepe", "ramo");
+//        em.getTransaction().begin();
+//        em.persist(e);
+//        em.getTransaction().commit();
     }
       
     @Override
