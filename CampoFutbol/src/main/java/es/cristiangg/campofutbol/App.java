@@ -30,7 +30,6 @@ public class App extends Application {
     @Override
       public void start(Stage stage) throws IOException {
         // Conexion con la base de datos
-        // Conexion con la base de datos
         try {
             EntityManagerFactory emf = Persistence.createEntityManagerFactory("CampoFubtolPU");
             em = emf.createEntityManager();

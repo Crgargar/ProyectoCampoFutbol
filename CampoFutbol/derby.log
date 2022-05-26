@@ -1,5 +1,5 @@
 ----------------------------------------------------------------
-Tue May 24 12:48:39 CEST 2022D001 : [0] The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585), [1] a816c00e-0180-f5ae-dc54-0000065334f8, [2] C:\Users\Usuario\Desktop\IES Los Remedios\Programacion\UD8\CampoFutbol\BD_CampoFutbol, [3] jdk.internal.loader.ClassLoaders$AppClassLoader@79698539, [4] file:/C:/Users/Usuario/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
+Thu May 26 06:47:40 CEST 2022D001 : [0] The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585), [1] a816c00e-0180-feb1-1705-000006581f80, [2] C:\Users\Usuario\Desktop\IES Los Remedios\Programacion\UD8\CampoFutbol\BD_CampoFutbol, [3] jdk.internal.loader.ClassLoaders$AppClassLoader@79698539, [4] file:/C:/Users/Usuario/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=Oracle Corporation
 java.runtime.version=11.0.11+9-LTS-194
 user.dir=C:\Users\Usuario\Desktop\IES Los Remedios\Programacion\UD8\CampoFutbol
@@ -8,7 +8,7 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=null
 C005 : [0] 
-Tue May 24 12:48:50 CEST 2022 Thread[JavaFX Application Thread,5,main] Cleanup action starting
+Thu May 26 06:47:58 CEST 2022 Thread[JavaFX Application Thread,5,main] Cleanup action starting
 java.sql.SQLException: XJ004.C : [0] BDCampoFutbol
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)
@@ -26,7 +26,7 @@ java.sql.SQLException: XJ004.C : [0] BDCampoFutbol
 	at org.apache.derby.iapi.jdbc.AutoloadedDriver.connect(AutoloadedDriver.java:136)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:251)
-	at es.cristiangg.campofutbol/es.cristiangg.campofutbol.App.stop(App.java:61)
+	at es.cristiangg.campofutbol/es.cristiangg.campofutbol.App.stop(App.java:60)
 	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$10(LauncherImpl.java:865)
 	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:455)
 	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:428)
@@ -61,7 +61,7 @@ ERROR XJ004: XJ004.C : [0] BDCampoFutbol
 	at org.apache.derby.iapi.jdbc.AutoloadedDriver.connect(AutoloadedDriver.java:136)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:251)
-	at es.cristiangg.campofutbol/es.cristiangg.campofutbol.App.stop(App.java:61)
+	at es.cristiangg.campofutbol/es.cristiangg.campofutbol.App.stop(App.java:60)
 	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$10(LauncherImpl.java:865)
 	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:455)
 	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:428)

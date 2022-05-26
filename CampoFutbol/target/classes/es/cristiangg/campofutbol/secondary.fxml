@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cristiangg.campofutbol.SecondaryController">
+<BorderPane fx:id="rootSecondary" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.cristiangg.campofutbol.SecondaryController">
    <center>
       <GridPane prefHeight="490.0" prefWidth="568.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -182,12 +182,12 @@
             </HBox>
             <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="11">
                <children>
-                  <Button mnemonicParsing="false" text="Examinar">
+                  <Button mnemonicParsing="false" onAction="#onActionButtonExaminar" text="Examinar">
                      <VBox.margin>
                         <Insets left="10.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Suprimir Foto">
+                  <Button mnemonicParsing="false" onAction="#onActionSuprimirFoto" text="Suprimir Foto">
                      <VBox.margin>
                         <Insets left="10.0" top="10.0" />
                      </VBox.margin>

@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
@@ -38,7 +39,9 @@ public class PrimaryController implements Initializable{
     @FXML
     private TextField textFieldLocalizacion;
     @FXML
-    private TextField textFieldDivision;
+    private TextField textFieldBuscar;
+    @FXML  
+    private CheckBox checkCoincide;
    
     @Override
     public void initialize(URL url, ResourceBundle rb){
@@ -81,7 +84,6 @@ public class PrimaryController implements Initializable{
             if (estadioSeleccionada != null){
                 estadioSeleccionada.setNombre(textFieldNombre.getText());
                 estadioSeleccionada.setLocalizacion(textFieldLocalizacion.getText());
-//                estadioSeleccionada.setLocalizacion(String.valueOf(textFieldDivision.getText());
                 App.em.getTransaction().begin();
                 App.em.merge(estadioSeleccionada);
                 App.em.getTransaction().commit();
@@ -156,6 +158,29 @@ public class PrimaryController implements Initializable{
             }
         }
         
+    @FXML
+    private void onActionButtonBuscar(ActionEvent event) {
+        if(!textFieldBuscar.getText().isEmpty()) {
+            if(checkCoincide.isSelected()) {
+                Query queryEstadioFindAll = App.em.createNamedQuery("Estadio.findByNombre");
+                queryEstadioFindAll.setParameter("nombre", textFieldBuscar.getText());
+                List<Estadio> listEstadio = queryEstadioFindAll.getResultList();
+                tableViewEstadio.setItems(FXCollections.observableArrayList(listEstadio));
+            } else {
+                String strQuery = "SELECT * FROM Estadio WHERE LOWER(nombre) LIKE ";
+                strQuery += "\'%" + textFieldBuscar.getText().toLowerCase() + "%\'";
+                Query queryEstadioFindAll = App.em.createNativeQuery(strQuery, Estadio.class);
+                
+                List<Estadio> listEstadio = queryEstadioFindAll.getResultList();
+                tableViewEstadio.setItems(FXCollections.observableArrayList(listEstadio));
+                
+                Logger.getLogger(this.getClass().getName()).log(Level.INFO, strQuery);
+            }
+        } else {
+            cargarTodosEstadio();
+        }
+    }
+           
         
    
     private void switchToSecondary() throws IOException {
